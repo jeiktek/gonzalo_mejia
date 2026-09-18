@@ -30,7 +30,7 @@ export const navigation = [
     label: 'Sobre Nosotros',
     href: '/nosotros.html',
     children: [
-      { label: 'Quienes somos', href: '/nosotros.html' },
+      { label: 'Quiénes somos', href: '/nosotros.html' },
       { label: 'Galería', href: '/galeria.html' },
     ],
   },

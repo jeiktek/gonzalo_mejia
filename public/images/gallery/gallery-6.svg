@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="950" viewBox="0 0 900 950" role="img" aria-label="Laboratorio">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#153B7A"/>
+      <stop offset="1" stop-color="#4D8DFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="950" fill="url(#g)"/>
+  <circle cx="738" cy="171" r="198" fill="#ffffff" opacity="0.08"/>
+  <circle cx="108" cy="779" r="162" fill="#ffffff" opacity="0.06"/>
+  <path d="M 108 646 L 270 646 L 270 836 Z" fill="#ffffff" opacity="0.10"/>
+  <path d="M 306 522 L 468 522 L 468 836 Z" fill="#ffffff" opacity="0.14"/>
+  <path d="M 504 589 L 666 589 L 666 836 Z" fill="#ffffff" opacity="0.18"/>
+  <text x="50%" y="46%" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" fill="#ffffff" opacity="0.9">Laboratorio</text>
+  <text x="50%" y="513" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#ffffff" opacity="0.6">I.E. Gonzalo Mejía - Chigorodó</text>
+</svg>

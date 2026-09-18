@@ -1,0 +1,50 @@
+# Institución Educativa Gonzalo Mejía
+
+Sitio web institucional para la Institución Educativa Gonzalo Mejía (Chigorodó, Antioquia, Colombia).
+
+## Stack
+
+- HTML + CSS + JavaScript vanilla (sin frameworks)
+- Iconos: [Lucide](https://lucide.dev)
+- Vite como servidor de desarrollo (sin backend, sin build de producción complejo)
+
+## Puesta en marcha
+
+```bash
+npm install
+npm run dev
+```
+
+## Cómo funciona
+
+- **Todo el contenido del sitio vive en `src/js/data.js`.** Cambiar un valor ahí se refleja en todas las páginas sin tocar otro archivo.
+- **Multi-página:** cada página es un HTML en `src/pages/` (enrutado configurado en `vite.config.js`). El layout común (header, footer) y el cuerpo de cada página se renderizan desde `data.js` mediante `src/js/main.js` y `src/js/components/sections.js`.
+- **Tema oscuro/claro:** respeta `prefers-color-scheme` por defecto y persiste la elección en `localStorage` (`gm-theme`).
+- **Accesibilidad:** HTML semántico, navegación por teclado, estados `focus-visible`, `prefers-reduced-motion`, contraste WCAG AA.
+
+## Assets de muestra (placeholders)
+
+Las carpetas contienen archivos de muestra generados, reemplázalos por los reales:
+
+- `public/images/` — fotografías del héroe, galería, noticias y página institucional.
+- `public/documents/` — PDFs institucionales (PEI, manual de convivencia, etc.).
+
+Para usar imágenes reales solo reemplaza los archivos conservando los nombres, o edita las rutas en `src/js/data.js`.
+
+## Fuentes
+
+Poppins y Caveat se cargan desde Google Fonts (ver el `<head>` de cada página).
+
+## Estructura
+
+```
+public/          # favicon, robots.txt, images/, documents/
+src/
+  css/           # variables, reset, base, layout, components, utilities, style
+  js/
+    data.js      # TODO el contenido del sitio
+    main.js      # bootstrap + init de componentes
+    utils/       # theme.js, helpers.js
+    components/  # header, footer, sections, carousel, stats, lightbox, scrollReveal
+  pages/         # 12 páginas HTML
+```

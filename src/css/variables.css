@@ -1,0 +1,134 @@
+/* ==========================================================================
+   Variables de diseño (UI-UX.md: secciones 3-6, 19, 21)
+   ========================================================================== */
+
+:root {
+  /* Colores principales */
+  --color-primary: #0a1f4d;
+  --color-primary-light: #153b7a;
+  --color-primary-dark: #061535;
+  --color-blue: #1769ff;
+  --color-blue-light: #4d8dff;
+  --color-blue-dark: #0a4bc2;
+  --color-yellow: #ffd21f;
+  --color-yellow-light: #ffe45c;
+  --color-yellow-dark: #e5b900;
+
+  /* Colores secundarios */
+  --color-cyan: #29b6f6;
+  --color-green: #20c997;
+  --color-purple: #8b5cf6;
+  --color-orange: #ff9f1c;
+
+  /* Neutros (modo claro) */
+  --color-white: #ffffff;
+  --color-surface: #f7f9fc;
+  --color-surface-alt: #eef3fa;
+  --color-text: #13213c;
+  --color-text-secondary: #5d6b82;
+  --color-text-muted: #8793a7;
+  --color-border: #dce4f0;
+  --color-bg: var(--color-surface);
+  --color-bg-section: var(--color-white);
+  --color-card: var(--color-white);
+  --color-card-border: var(--color-border);
+  --color-body-text: var(--color-text);
+
+  /* Tipografía */
+  --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-decorative: 'Caveat', cursive;
+
+  --fs-hero: clamp(40px, 6vw, 64px);
+  --fs-h1: clamp(30px, 4.6vw, 48px);
+  --fs-h2: clamp(27px, 3.6vw, 38px);
+  --fs-h3: clamp(21px, 2.4vw, 24px);
+  --fs-h4: clamp(17px, 1.6vw, 18px);
+  --fs-body: clamp(15px, 1.1vw, 16px);
+  --fs-small: clamp(13px, 1vw, 14px);
+  --fs-caption: clamp(11px, 0.9vw, 12px);
+
+  --lh-heading: 1.2;
+  --lh-heading-hero: 1.1;
+  --lh-body: 1.65;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Radios */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-xxl: 36px;
+  --radius-pill: 999px;
+
+  /* Sombras */
+  --shadow-sm: 0 2px 8px rgba(10, 31, 77, 0.06);
+  --shadow-md: 0 8px 24px rgba(10, 31, 77, 0.1);
+  --shadow-lg: 0 16px 40px rgba(10, 31, 77, 0.14);
+  --shadow-xl: 0 24px 60px rgba(10, 31, 77, 0.18);
+
+  /* Espaciado: múltiplos de 4 / 8 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 96px;
+
+  /* Layout */
+  --container-max: 1280px;
+  --container-max-x: 1380px;
+  --section-pad: clamp(56px, 8vw, 96px);
+  --header-height: 76px;
+  --nav-gap: var(--space-4);
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 200ms;
+  --dur-base: 300ms;
+  --dur-slow: 600ms;
+  --dur-carousel: 800ms;
+
+  /* Navbar */
+  --navbar-bg: rgba(10, 31, 77, 0.92);
+  --navbar-blur: blur(12px);
+  --navbar-link: var(--color-white);
+  --navbar-link-muted: rgba(255, 255, 255, 0.78);
+  --navbar-shadow: var(--shadow-lg);
+}
+
+/* ==========================================================================
+   Modo oscuro (UI-UX.md: sección 21)
+   ========================================================================== */
+
+:root[data-theme='dark'] {
+  --color-bg: #07142f;
+  --color-bg-section: #0a1f4d;
+  --color-surface: #102653;
+  --color-surface-alt: #15305f;
+  --color-card: #102653;
+  --color-card-border: #263d68;
+  --color-text: #f5f7fb;
+  --color-text-secondary: #b8c4d9;
+  --color-text-muted: #8796b0;
+  --color-border: #263d68;
+  --color-body-text: var(--color-text);
+  --color-blue: #4d8dff;
+  --color-blue-light: #70a5ff;
+  --color-blue-dark: #70a5ff;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.55);
+}

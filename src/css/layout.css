@@ -1,0 +1,218 @@
+/* ==========================================================================
+   Layout (contenedores, secciones, grids)
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 40px);
+}
+
+.container-narrow {
+  max-width: 46rem;
+}
+
+.section {
+  padding-block: var(--section-pad);
+  background: var(--color-bg-section);
+}
+
+.section--alt {
+  background: var(--color-bg);
+}
+
+.section--navy {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.section--navy h2,
+.section--navy h3,
+.section--navy p {
+  color: var(--color-white);
+}
+
+.section--navy .eyebrow {
+  color: var(--color-yellow);
+}
+
+.section--navy .eyebrow::before {
+  background: var(--color-yellow-light);
+}
+
+.section-head {
+  max-width: 46rem;
+  margin-bottom: var(--space-9);
+}
+
+.section-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-head--center .eyebrow::before {
+  margin-right: var(--space-2);
+}
+
+.section-head .lead {
+  margin-top: var(--space-3);
+  color: var(--color-text-secondary);
+}
+
+.section--navy .section-head .lead {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* Grids base */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-2 {
+  grid-template-columns: 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: 1fr;
+}
+
+.grid-4 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 576px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Dos columnas asimétricas (Nuestra Institución) */
+.about-grid {
+  display: grid;
+  gap: var(--space-9);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+/* Main */
+.site-main {
+  min-height: 70vh;
+}
+
+/* Cabecera de página interna */
+.page-hero {
+  position: relative;
+  padding: calc(var(--header-height) + var(--space-10)) 0 var(--space-10);
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, rgba(77, 141, 255, 0.25), transparent 60%),
+    radial-gradient(30rem 20rem at -5% 110%, rgba(255, 210, 31, 0.12), transparent 60%),
+    linear-gradient(135deg, var(--color-primary-dark), var(--color-primary) 55%, var(--color-primary-light));
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.page-hero h1 {
+  color: var(--color-white);
+  max-width: 20ch;
+  margin-bottom: var(--space-3);
+}
+
+.page-hero .lead {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 56ch;
+}
+
+.page-hero .eyebrow {
+  color: var(--color-yellow);
+}
+
+.page-hero .eyebrow::before {
+  background: var(--color-yellow-light);
+}
+
+/* Utilidad de layout */
+.stack > * + * {
+  margin-top: var(--space-4);
+}
+
+/* Media de "Nuestra Institución" / páginas internas */
+.about-media {
+  position: relative;
+}
+
+.about-media::after {
+  content: '';
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 55%;
+  height: 55%;
+  border: 3px solid var(--color-yellow);
+  border-radius: var(--radius-xl);
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.about-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Lista informativa (datos de la institución) */
+.info-list {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 576px) {
+  .info-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.info-list div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+[data-theme='dark'] .info-list div {
+  background: var(--color-card);
+}
+
+.info-list dt {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.info-list dd {
+  font-size: var(--fs-small);
+  color: var(--color-text);
+  text-align: right;
+}

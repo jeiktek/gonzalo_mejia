@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="750" viewBox="0 0 1000 750" role="img" aria-label="Nuestra institución">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1F4D"/>
+      <stop offset="1" stop-color="#1769FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="750" fill="url(#g)"/>
+  <circle cx="820" cy="135" r="220" fill="#ffffff" opacity="0.08"/>
+  <circle cx="120" cy="615" r="180" fill="#ffffff" opacity="0.06"/>
+  <path d="M 120 510 L 300 510 L 300 660 Z" fill="#ffffff" opacity="0.10"/>
+  <path d="M 340 412 L 520 412 L 520 660 Z" fill="#ffffff" opacity="0.14"/>
+  <path d="M 560 465 L 740 465 L 740 660 Z" fill="#ffffff" opacity="0.18"/>
+  <text x="50%" y="46%" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="700" fill="#ffffff" opacity="0.9">Nuestra institución</text>
+  <text x="50%" y="54%" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="38" fill="#ffffff" opacity="0.6">I.E. Gonzalo Mejía - Chigorodó</text>
+</svg>

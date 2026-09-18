@@ -5,7 +5,7 @@ Sitio web institucional para la Institución Educativa Gonzalo Mejía (Chigorod�
 ## Stack
 
 - HTML + CSS + JavaScript vanilla (sin frameworks)
-- Iconos: [Lucide](https://lucide.dev)
+- Iconos: [Lucide](https://lucide.dev) (los iconos de marca como Facebook se dibujan como SVG inline en `src/js/utils/helpers.js`, porque Lucide ya no los incluye)
 - Vite como servidor de desarrollo (sin backend, sin build de producción complejo)
 
 ## Puesta en marcha
@@ -13,7 +13,18 @@ Sitio web institucional para la Institución Educativa Gonzalo Mejía (Chigorod�
 ```bash
 npm install
 npm run dev
+npm run build   # emite el sitio en dist/
 ```
+
+## Deploy (Netlify)
+
+El repo incluye un `netlify.toml` que construye con `npm run build` y publica
+`dist/` (Node 22). Dos opciones:
+
+- **GitHub → Netlify:** el sitio ya está en git/GitHub. Conectar el repo en
+  Netlify y cada `push` a `main` despliega automáticamente.
+- **Netlify Drop / CLI:** arrastrar `dist/` o ejecutar `npx netlify deploy`
+  (con `--prod` para producción).
 
 ## Cómo funciona
 

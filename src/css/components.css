@@ -105,6 +105,41 @@
   transform: translateY(-2px);
 }
 
+/* Botones de redes sociales en el header (Facebook) */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  color: var(--color-primary);
+  transition:
+    background-color var(--dur-fast) ease,
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) ease;
+}
+
+.social-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.social-btn--fb {
+  background: var(--color-yellow);
+}
+
+.social-btn--fb:hover {
+  background: var(--color-yellow-light);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme='dark'] .social-btn--fb {
+  color: var(--color-primary-dark);
+}
+
 /* Badges */
 .badge {
   display: inline-flex;
@@ -462,21 +497,25 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(6, 21, 53, 0.35) 0%,
-    rgba(6, 21, 53, 0.4) 40%,
-    rgba(6, 21, 53, 0.78) 100%
-  );
+  background:
+    radial-gradient(46rem 20rem at 82% -10%, rgba(32, 201, 151, 0.22), transparent 60%),
+    linear-gradient(
+      180deg,
+      rgba(6, 21, 53, 0.35) 0%,
+      rgba(6, 21, 53, 0.4) 40%,
+      rgba(6, 21, 53, 0.78) 100%
+    );
 }
 
 [data-theme='dark'] .hero-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(4, 12, 32, 0.55) 0%,
-    rgba(4, 12, 32, 0.6) 40%,
-    rgba(4, 12, 32, 0.85) 100%
-  );
+  background:
+    radial-gradient(46rem 20rem at 82% -10%, rgba(32, 201, 151, 0.16), transparent 60%),
+    linear-gradient(
+      180deg,
+      rgba(4, 12, 32, 0.55) 0%,
+      rgba(4, 12, 32, 0.6) 40%,
+      rgba(4, 12, 32, 0.85) 100%
+    );
 }
 
 .hero-caption {
@@ -727,12 +766,21 @@
 .card-category {
   display: inline-flex;
   align-items: center;
+  align-self: flex-start;
   gap: var(--space-1);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
   font-size: var(--fs-caption);
   font-weight: var(--fw-semibold);
-  color: var(--color-blue);
+  color: var(--color-green-dark);
+  background: rgba(32, 201, 151, 0.14);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+[data-theme='dark'] .card-category {
+  color: var(--color-green-light);
+  background: rgba(32, 201, 151, 0.16);
 }
 
 .card-date {
@@ -788,6 +836,18 @@
   background: rgba(77, 141, 255, 0.14);
   color: var(--color-blue);
   margin-bottom: var(--space-5);
+}
+
+/* Proyectos "ambientales": ornamentación y medio ambiente en verde */
+.project-card:nth-child(2) .project-icon,
+.project-card:nth-child(3) .project-icon {
+  background: rgba(32, 201, 151, 0.16);
+  color: var(--color-green-dark);
+}
+
+[data-theme='dark'] .project-card:nth-child(2) .project-icon,
+[data-theme='dark'] .project-card:nth-child(3) .project-icon {
+  color: var(--color-green-light);
 }
 
 .project-title {
@@ -1162,7 +1222,7 @@
 }
 
 .principle-title .icon {
-  color: var(--color-blue);
+  color: var(--color-green);
 }
 
 .principle-text {
@@ -1408,7 +1468,7 @@ textarea.form-input {
 }
 
 .cta-band .deco.deco-1 { width: 160px; height: 160px; top: -60px; left: -40px; }
-.cta-band .deco.deco-2 { width: 90px; height: 90px; bottom: -30px; right: 60px; }
+.cta-band .deco.deco-2 { width: 90px; height: 90px; bottom: -30px; right: 60px; background: rgba(32, 201, 151, 0.16); }
 
 /* --------------------------------------------------------------------------
    Footer (UI-UX.md: 15)
@@ -1418,6 +1478,14 @@ textarea.form-input {
   background: var(--color-primary-dark);
   color: rgba(255, 255, 255, 0.78);
   padding: var(--space-11) 0 0;
+  border-top: 4px solid;
+  border-image: linear-gradient(
+      90deg,
+      var(--color-yellow),
+      var(--color-green) 55%,
+      var(--color-blue)
+    )
+    1;
 }
 
 .site-footer a:hover {
@@ -1462,6 +1530,11 @@ textarea.form-input {
   transition:
     background-color var(--dur-fast) ease,
     transform var(--dur-fast) var(--ease-out);
+}
+
+.footer-social a svg {
+  width: 20px;
+  height: 20px;
 }
 
 .footer-social a:hover {

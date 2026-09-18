@@ -4,7 +4,7 @@
  */
 
 import { navigation, site } from '../data.js'
-import { currentPage, icon } from '../utils/helpers.js'
+import { brandIcon, currentPage, icon } from '../utils/helpers.js'
 
 function navItem(item) {
   const isCurrent = currentPage() === item.href
@@ -51,6 +51,9 @@ export function renderHeader(el) {
       </nav>
 
       <div class="nav-actions">
+        <a class="social-btn social-btn--fb" href="${site.social.facebook}" target="_blank" rel="noopener" aria-label="Facebook de la institución">
+          ${brandIcon('facebook')}
+        </a>
         <button type="button" class="icon-btn" id="theme-toggle" aria-label="Cambiar tema"></button>
         <a class="btn btn--primary btn--sm nav-cta" href="${site.social.plataforma}" target="_blank" rel="noopener">
           Plataforma Académica ${icon('external-link')}

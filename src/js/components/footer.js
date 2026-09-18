@@ -3,7 +3,7 @@
  */
 
 import { footer, managementAreas, site } from '../data.js'
-import { icon } from '../utils/helpers.js'
+import { brandIcon, icon } from '../utils/helpers.js'
 
 export function renderFooter(el) {
   const year = new Date().getFullYear()
@@ -24,7 +24,7 @@ export function renderFooter(el) {
             ${footer.socials
               .map(
                 (s) =>
-                  `<li><a href="${s.href}" target="_blank" rel="noopener" aria-label="${s.label}">${icon(s.icon)}</a></li>`
+                  `<li><a href="${s.href}" target="_blank" rel="noopener" aria-label="${s.label}">${brandIcon(s.icon)}</a></li>`
               )
               .join('')}
           </ul>

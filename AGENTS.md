@@ -57,4 +57,7 @@ and the dark-mode palette.
 
 - `npm run dev` — start dev server (must pass without errors).
 - `npm run build` — production build; check `dist/` for the flattened HTML.
+- `netlify.toml` — Netlify deploy (build `npm run build`, publish `dist`, Node 22).
+- Brand icons (Facebook, etc.) are NOT in Lucide 1.x: render with `brandIcon()`
+  in `src/js/utils/helpers.js` (inline SVG), never a lucide icon name.
 - No test/lint tooling configured.

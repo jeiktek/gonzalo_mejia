@@ -49,9 +49,12 @@ and the dark-mode palette.
 - WCAG AA: semantic HTML, keyboard nav, `:focus-visible` (yellow outline), alt text,
   `prefers-reduced-motion` (reveal/counters/carousel respect it).
 - Micro-interactions: scroll reveal, hover, counters on stats.
-- `public/images/` and `public/documents/` hold placeholder assets (SVG gradients and
-  stub PDFs). Replace file names or edit paths in `data.js` to use real ones; the
-  structure/keys must stay in sync.
+- `public/images/` hosts the real assets, organized by use: `hero/` (banners),
+  `gallery/`, `news/`, `extra/` (unused, pending review), the escudo logo at the
+  root (`gonzalomejia-escudo.png`, used as header/footer brand, favicon and about
+  emblem), plus `public/documents/` for the institutional PDFs. Canonical photo
+  format is `.webp` (one file per image). New photos → same folders, update the
+  `src/js/data.js` paths; keep thumbs out (no server-side resizing here).
 
 ## Commands
 

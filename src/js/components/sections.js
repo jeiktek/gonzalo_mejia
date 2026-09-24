@@ -94,6 +94,7 @@ function renderIndex() {
         </div>
         <div class="about-media"${reveal(120)}>
           <img src="${about.image}" alt="${about.imageAlt}" loading="lazy">
+          <img class="about-emblem" src="/images/gonzalomejia-escudo.png" alt="" loading="lazy">
         </div>
       </div>
     </section>

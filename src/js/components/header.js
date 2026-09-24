@@ -37,7 +37,7 @@ export function renderHeader(el) {
   el.innerHTML = `
     <div class="container nav-inner">
       <a class="brand" href="/index.html" aria-label="${site.name}">
-        <span class="brand-mark" aria-hidden="true">GM</span>
+        <img class="brand-logo" src="/images/gonzalomejia-escudo.png" alt="" width="40" height="40">
         <span class="brand-text">
           <strong>${site.shortName}</strong>
           <small>Institución Educativa</small>

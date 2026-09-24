@@ -12,8 +12,8 @@ export function renderFooter(el) {
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a class="brand" href="/index.html" aria-label="${site.name}">
-            <span class="brand-mark" aria-hidden="true">GM</span>
+          <a class="brand brand--footer" href="/index.html" aria-label="${site.name}">
+            <img class="brand-logo" src="/images/gonzalomejia-escudo.png" alt="" width="56" height="56">
             <span class="brand-text">
               <strong>${site.shortName}</strong>
               <small>Institución Educativa</small>

@@ -35,12 +35,18 @@ El repo incluye un `netlify.toml` que construye con `npm run build` y publica
 
 ## Assets de muestra (placeholders)
 
-Las carpetas contienen archivos de muestra generados, reemplázalos por los reales:
+Las fotos, el escudo y los documentos institucionales ya son los reales. Están organizados así:
 
-- `public/images/` — fotografías del héroe, galería, noticias y página institucional.
-- `public/documents/` — PDFs institucionales (PEI, manual de convivencia, etc.).
+- `public/images/hero/` — banners del carrusel (gonzalomejia-{2,3,4,13}.webp).
+- `public/images/gallery/` — fotos de la galería (incluye la reutilizada en "Sobre nosotros").
+- `public/images/news/` — fotos de las tarjetas de noticias.
+- `public/images/extra/` — fotos subidas sin usar (gonzalomejia-17, 18-1); revisar antes de borrarlas o usarlas.
+- `public/images/gonzalomejia-escudo.png` — logo/escudo (marca del header, footer, favicon y sección "Sobre nosotros").
+- `public/images/gonzalomejia-logo.png` — variante de logo (por ahora sin usar).
+- `public/documents/` — PDFs institucionales; `data.js` los lista y nombrá en la sección Documentos.
 
-Para usar imágenes reales solo reemplaza los archivos conservando los nombres, o edita las rutas en `src/js/data.js`.
+Formato canónico de fotos: `.webp`, un archivo por imagen. Los placeholders SVG originales y las variantes
+de tamaño de la exportación de WordPress se eliminaron.
 
 ## Fuentes
 

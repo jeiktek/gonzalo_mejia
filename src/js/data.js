@@ -64,25 +64,25 @@ function managementNavItems() {
 export const hero = {
   slides: [
     {
-      image: '/images/hero/hero-1.svg',
+      image: '/images/hero/gonzalomejia-2.webp',
       eyebrow: 'Bienvenidos',
       title: 'Educación con compromiso y futuro',
       text: 'La Institución Educativa Gonzalo Mejía forma ciudadanos íntegros, con grandes aspiraciones y profundo compromiso con su comunidad.',
     },
     {
-      image: '/images/hero/hero-2.svg',
+      image: '/images/hero/gonzalomejia-3.webp',
       eyebrow: 'Nuestra institución',
       title: 'Una comunidad que aprende, crece y transforma',
       text: 'En el corazón de Chigorodó trabajamos cada día por una educación moderna, tecnológica y cercana a las familias.',
     },
     {
-      image: '/images/hero/hero-3.svg',
+      image: '/images/hero/gonzalomejia-4.webp',
       eyebrow: 'Proyectos pedagógicos',
       title: 'Competencias básicas y ciudadanas',
       text: 'Proyectos transversales de sexualidad, ornamentación, medio ambiente y prevención de desastres para vivir el aprendizaje.',
     },
     {
-      image: '/images/hero/hero-4.svg',
+      image: '/images/hero/gonzalomejia-13.webp',
       eyebrow: 'Plataforma académica',
       title: 'Conectados con la tecnología',
       text: 'Una sala de sistemas con 50 computadores y plataforma en línea para estar siempre en contacto con el proceso escolar.',
@@ -106,7 +106,7 @@ export const about = {
     'La Institución Educativa Gonzalo Mejía está ubicada en el centro del municipio de Chigorodó, en la calle 96 Nº 105-27, barrio Fondo Obrero. Es un establecimiento educativo de dimensiones físicas reducidas, pero con grandes aspiraciones, proyecciones y compromiso con el servicio a la comunidad.',
     'Dispone de 13 aulas, una sala de sistemas equipada con 50 computadores en buen estado, una biblioteca amplia y confortable, un laboratorio con espacio limitado pero debidamente dotado, un área destinada a la secretaría y la rectoría, así como espacios para coordinación y orientación escolar. Además, cuenta con una tienda escolar, una simulación de restaurante escolar, una batería sanitaria compuesta por seis unidades, un baño adaptado para estudiantes con necesidades educativas especiales y una cancha para el desarrollo de actividades deportivas.',
   ],
-  image: '/images/about/about-1.svg',
+  image: '/images/gallery/gonzalomejia-30.webp',
   imageAlt: 'Institución Educativa Gonzalo Mejía',
   locationBadge: { icon: 'map-pin', text: 'Centro de Chigorodó, Urabá' },
   info: [
@@ -160,15 +160,21 @@ export const documents = {
     'Consulta y descarga los documentos institucionales que orientan la vida escolar de la institución.',
   items: [
     {
+      title: 'Horizonte institucional',
+      description: 'Misión, visión y principios que orientan nuestra labor educativa.',
+      file: '/documents/horizonte-institucional.pdf',
+      icon: 'file-text',
+    },
+    {
       title: 'Proyecto Educativo Institucional (PEI)',
       description: 'Documento rector del horizonte y las prácticas institucionales.',
-      file: '/documents/pei.pdf',
+      file: '/documents/proyecto-educativo-institucional.pdf',
       icon: 'file-text',
     },
     {
       title: 'Manual de convivencia',
       description: 'Acuerdos y normas para una sana convivencia escolar.',
-      file: '/documents/manual-convivencia.pdf',
+      file: '/documents/manual-de-convivencia.pdf',
       icon: 'file-text',
     },
     {
@@ -178,10 +184,58 @@ export const documents = {
       icon: 'file-text',
     },
     {
-      title: 'Horizonte institucional',
-      description: 'Misión, visión y principios que orientan nuestra labor educativa.',
-      file: '/documents/horizonte-institucional.pdf',
+      title: 'Consejo de padres de familia',
+      description: 'Conformación y participación del consejo de padres en la vida institucional.',
+      file: '/documents/consejo-de-padres.pdf',
       icon: 'file-text',
+    },
+    {
+      title: 'Consejo estudiantil',
+      description: 'Conformación y funciones del consejo estudiantil.',
+      file: '/documents/consejo-estudiantil.pdf',
+      icon: 'file-text',
+    },
+    {
+      title: 'Consejo directivo — Representantes',
+      description: 'Integrantes del consejo directivo de la institución.',
+      file: '/documents/representantes-consejo-directivo.pdf',
+      icon: 'file-text',
+    },
+    {
+      title: 'Consejo académico — Integrantes',
+      description: 'Integrantes del consejo académico de la institución.',
+      file: '/documents/integrantes-consejo-academico.pdf',
+      icon: 'file-text',
+    },
+    {
+      title: 'Comité de convivencia escolar',
+      description: 'Integrantes del comité de convivencia escolar.',
+      file: '/documents/integrantes-comite-convivencia-escolar.pdf',
+      icon: 'file-text',
+    },
+    {
+      title: 'Reglamento del comité de convivencia',
+      description: 'Normas de funcionamiento del comité de convivencia escolar.',
+      file: '/documents/reglamento-comite-convivencia.pdf',
+      icon: 'file-text',
+    },
+    {
+      title: 'Manual de funciones',
+      description: 'Perfiles y funciones de los diferentes cargos institucionales.',
+      file: '/documents/manual-de-funciones.pdf',
+      icon: 'file-text',
+    },
+    {
+      title: 'Acuerdo 07',
+      description: 'Acuerdo institucional emitido por el Consejo Directivo.',
+      file: '/documents/acuerdo-07.pdf',
+      icon: 'file-text',
+    },
+    {
+      title: 'Historia de la institución',
+      description: 'Recorrido por la historia y la trayectoria de la Institución Educativa Gonzalo Mejía.',
+      file: '/documents/Historia-Gonzalo.pdf',
+      icon: 'book-open',
     },
   ],
 }
@@ -191,28 +245,28 @@ export const news = {
   title: 'Lo más reciente',
   items: [
     {
-      image: '/images/news/news-1.svg',
+      image: '/images/news/gonzalomejia-19-1.webp',
       category: 'Institucional',
       title: 'Inicio del año escolar 2026',
       summary: 'Conoce las fechas clave del calendario académico y los protocolos de inicio de clases.',
       date: 'Enero 2026',
     },
     {
-      image: '/images/news/news-2.svg',
+      image: '/images/news/gonzalomejia-10.webp',
       category: 'Proyectos',
       title: 'Proyecto de medio ambiente: sembrando vida',
       summary: 'Estudiantes y docentes participan en jornadas de embellecimiento y cuidado del entorno escolar.',
       date: 'Febrero 2026',
     },
     {
-      image: '/images/news/news-3.svg',
+      image: '/images/news/gonzalomejia-11.webp',
       category: 'Comunidad',
       title: 'Jornadas de integración con las familias',
       summary: 'Espacios de encuentro y participación para las familias de nuestra comunidad educativa.',
       date: 'Marzo 2026',
     },
     {
-      image: '/images/news/news-4.svg',
+      image: '/images/news/gonzalomejia-12.webp',
       category: 'Logros',
       title: 'Gonzalo Mejía frente a las pruebas Saber',
       summary: 'Nuestros estudiantes se preparan con acompañamiento permanente para las pruebas de Estado.',
@@ -226,14 +280,14 @@ export const gallery = {
   title: 'Galería institucional',
   intro: 'Un recorrido visual por los espacios, las aulas y los momentos de nuestra institución.',
   items: [
-    { image: '/images/gallery/gallery-1.svg', caption: 'Nuestra sede' },
-    { image: '/images/gallery/gallery-2.svg', caption: 'Aula de clase' },
-    { image: '/images/gallery/gallery-3.svg', caption: 'Sala de sistemas' },
-    { image: '/images/gallery/gallery-4.svg', caption: 'Biblioteca' },
-    { image: '/images/gallery/gallery-5.svg', caption: 'Cancha deportiva' },
-    { image: '/images/gallery/gallery-6.svg', caption: 'Laboratorio' },
-    { image: '/images/gallery/gallery-7.svg', caption: 'Restaurante escolar' },
-    { image: '/images/gallery/gallery-8.svg', caption: 'Tienda escolar' },
+    { image: '/images/gallery/gonzalomejia-30.webp', caption: 'Nuestra sede' },
+    { image: '/images/gallery/gonzalomejia-15.webp', caption: 'Aula de clase' },
+    { image: '/images/gallery/gonzalomejia-14.webp', caption: 'Sala de sistemas' },
+    { image: '/images/gallery/gonzalomejia-5.webp', caption: 'Biblioteca' },
+    { image: '/images/gallery/gonzalomejia-6.webp', caption: 'Cancha deportiva' },
+    { image: '/images/gallery/gonzalomejia-7.webp', caption: 'Laboratorio' },
+    { image: '/images/gallery/gonzalomejia-8.webp', caption: 'Restaurante escolar' },
+    { image: '/images/gallery/gonzalomejia-9.webp', caption: 'Tienda escolar' },
   ],
 }
 

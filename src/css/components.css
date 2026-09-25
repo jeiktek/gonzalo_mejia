@@ -177,7 +177,10 @@
 }
 
 [data-theme='dark'] .site-header.is-scrolled {
-  background: rgba(7, 20, 47, 0.88);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
 }
 
 .nav-inner {
@@ -303,7 +306,7 @@
 }
 
 [data-theme='dark'] .dropdown {
-  background: var(--color-primary-light);
+  background: #0c1120;
 }
 
 .dropdown .dropdown-link {
@@ -374,7 +377,7 @@
 }
 
 [data-theme='dark'] .site-header .nav {
-  background: var(--color-bg-section);
+  background: #0a0e1a;
 }
 
 @media (min-width: 1024px) {
@@ -777,7 +780,7 @@
   border-radius: var(--radius-pill);
   font-size: var(--fs-caption);
   font-weight: var(--fw-semibold);
-  color: var(--color-green-dark);
+  color: #0f7a66;
   background: rgba(32, 201, 151, 0.14);
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -793,7 +796,7 @@
   align-items: center;
   gap: 6px;
   font-size: var(--fs-caption);
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
 }
 
 /* Proyectos */
@@ -1597,4 +1600,8 @@ textarea.form-input {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: var(--fs-caption);
   color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.6);
 }

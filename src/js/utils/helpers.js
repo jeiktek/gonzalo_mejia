@@ -10,9 +10,13 @@ export function currentPage() {
   return path === '/' ? '/index.html' : path
 }
 
-/** Ícono de Lucide renderizado como atributo (se convierte al montar). */
+/**
+ * Ícono de Lucide renderizado como atributo (se convierte al montar).
+ * La clase `icon` es la que usa el CSS para dar tamaño y grosor al trazo,
+ * así que se incluye siempre en el placeholder.
+ */
 export function icon(name, extra = '') {
-  return `<i data-lucide="${name}" aria-hidden="true"${extra}></i>`
+  return `<i class="icon" data-lucide="${name}" aria-hidden="true"${extra}></i>`
 }
 
 /**

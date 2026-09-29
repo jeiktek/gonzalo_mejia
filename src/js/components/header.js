@@ -99,6 +99,7 @@ function initHeaderInteractions(header) {
     toggle?.setAttribute('aria-expanded', 'false')
     setToggleIcon(false)
     document.body.style.overflow = ''
+    closeDropdowns()
   }
 
   toggle?.addEventListener('click', (e) => {
@@ -109,8 +110,16 @@ function initHeaderInteractions(header) {
     document.body.style.overflow = open ? 'hidden' : ''
   })
 
+  const closeDropdowns = () => {
+    header.querySelectorAll('.nav-item.dropdown-open').forEach((item) => {
+      item.classList.remove('dropdown-open')
+      item.querySelector('.nav-link')?.setAttribute('aria-expanded', 'false')
+    })
+  }
+
   header.querySelectorAll('.nav-item.has-children > .nav-link').forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation()
       const item = btn.closest('.nav-item')
       const open = item.classList.toggle('dropdown-open')
       btn.setAttribute('aria-expanded', String(open))

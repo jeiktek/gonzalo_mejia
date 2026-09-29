@@ -25,39 +25,62 @@ export const site = {
 }
 
 export const navigation = [
-  { label: 'Inicio', href: '/index.html' },
+  { label: 'Inicio', href: '/index.html', icon: 'house' },
   {
     label: 'Sobre Nosotros',
     href: '/nosotros.html',
+    icon: 'landmark',
     children: [
-      { label: 'Quiénes somos', href: '/nosotros.html' },
-      { label: 'Galería', href: '/galeria.html' },
+      { label: 'Quiénes somos', href: '/nosotros.html', icon: 'users' },
+      { label: 'Galería', href: '/galeria.html', icon: 'images' },
     ],
   },
   {
     label: 'Institucional',
     href: '/proyectos.html',
+    icon: 'folder-tree',
     children: [
-      { label: 'Proyectos', href: '/proyectos.html' },
-      { label: 'Documentos institucionales', href: '/documentos.html' },
-      { label: 'Noticias', href: '/noticias.html' },
+      { label: 'Proyectos', href: '/proyectos.html', icon: 'target' },
+      {
+        label: 'Documentos institucionales',
+        href: '/documentos.html',
+        icon: 'file-text',
+      },
+      { label: 'Noticias', href: '/noticias.html', icon: 'newspaper' },
     ],
   },
   {
     label: 'Gestiones',
     href: '/gestiones.html',
+    icon: 'clipboard-list',
     children: managementNavItems(),
   },
-  { label: 'Contacto', href: '/contacto.html' },
+  { label: 'Contacto', href: '/contacto.html', icon: 'mail' },
 ]
 
 // Submenú de gestiones para la navegación principal
 function managementNavItems() {
   return [
-    { label: 'Consejo académico', href: '/consejo-academico.html' },
-    { label: 'Gestión administrativa y financiera', href: '/gestion-administrativa.html' },
-    { label: 'Gestión comunitaria', href: '/gestion-comunitaria.html' },
-    { label: 'Gestión directiva', href: '/gestion-directiva.html' },
+    {
+      label: 'Consejo académico',
+      href: '/consejo-academico.html',
+      icon: 'graduation-cap',
+    },
+    {
+      label: 'Gestión administrativa y financiera',
+      href: '/gestion-administrativa.html',
+      icon: 'briefcase',
+    },
+    {
+      label: 'Gestión comunitaria',
+      href: '/gestion-comunitaria.html',
+      icon: 'heart-handshake',
+    },
+    {
+      label: 'Gestión directiva',
+      href: '/gestion-directiva.html',
+      icon: 'compass',
+    },
   ]
 }
 

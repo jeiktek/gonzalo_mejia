@@ -9,16 +9,19 @@ import { createIcons, icons } from 'lucide'
 
 function navItem(item) {
   const isCurrent = currentPage() === item.href
+  const chip = item.icon
+    ? `<span class="nav-link-icon" aria-hidden="true">${icon(item.icon)}</span>`
+    : ''
 
   const linkLabel = item.children
-    ? `<button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">${item.label}${icon('chevron-down')}</button>`
-    : `<a class="nav-link" href="${item.href}"${isCurrent ? ' aria-current="page"' : ''}>${item.label}</a>`
+    ? `<button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">${chip}<span class="nav-link-label">${item.label}</span><span class="nav-link-caret" aria-hidden="true">${icon('chevron-right')}</span></button>`
+    : `<a class="nav-link" href="${item.href}"${isCurrent ? ' aria-current="page"' : ''}>${chip}<span class="nav-link-label">${item.label}</span></a>`
 
   const children = item.children
     ? `<ul class="dropdown">${item.children
         .map(
           (c) =>
-            `<li><a class="dropdown-link${currentPage() === c.href ? ' is-active' : ''}" href="${c.href}">${c.label}</a></li>`
+            `<li><a class="dropdown-link${currentPage() === c.href ? ' is-active' : ''}" href="${c.href}">${c.icon ? `<span class="dropdown-link-icon" aria-hidden="true">${icon(c.icon)}</span>` : ''}<span class="dropdown-link-label">${c.label}</span></a></li>`
         )
         .join('')}</ul>`
     : ''

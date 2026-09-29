@@ -2,6 +2,11 @@
    Base (tipografía, texto, cabeceras, enlaces)
    ========================================================================== */
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   background: var(--color-bg);
   color: var(--color-body-text);

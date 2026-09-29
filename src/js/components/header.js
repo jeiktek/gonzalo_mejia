@@ -5,6 +5,7 @@
 
 import { navigation, site } from '../data.js'
 import { brandIcon, currentPage, icon } from '../utils/helpers.js'
+import { createIcons, icons } from 'lucide'
 
 function navItem(item) {
   const isCurrent = currentPage() === item.href
@@ -93,6 +94,7 @@ function initHeaderInteractions(header) {
     const open = header.classList.toggle('nav-open')
     toggle.setAttribute('aria-expanded', String(open))
     toggle.innerHTML = icon(open ? 'x' : 'menu')
+    createIcons({ icons })
     document.body.style.overflow = open ? 'hidden' : ''
   })
 

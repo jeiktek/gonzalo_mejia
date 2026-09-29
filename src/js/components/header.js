@@ -46,7 +46,7 @@ function navItem(item) {
   return `<li class="${cls}">${linkLabel}${children}</li>`
 }
 
-export function renderHeader(el) {
+function renderHeader(el) {
   el.innerHTML = `
     <div class="container nav-inner">
       <a class="brand" href="/index.html" aria-label="${site.name}">
@@ -79,6 +79,7 @@ export function renderHeader(el) {
   `
 }
 
+/** Renderiza el header y activa sus interacciones. */
 export function initHeader() {
   const header = document.getElementById('site-header')
   if (!header) return

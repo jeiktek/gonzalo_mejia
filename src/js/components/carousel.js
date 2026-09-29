@@ -4,7 +4,7 @@
  * Se pausa al interactuar. Respeta `prefers-reduced-motion`.
  */
 
-import { prefersReducedMotion } from '../utils/helpers.js'
+import { onSwipe, prefersReducedMotion } from '../utils/helpers.js'
 
 const AUTOPLAY_MS = 6000
 
@@ -21,7 +21,6 @@ export function initCarousel() {
   const reduced = prefersReducedMotion()
   let current = 0
   let timer = null
-  let touchX = null
 
   const stop = () => {
     if (timer) {
@@ -58,25 +57,10 @@ export function initCarousel() {
   container.addEventListener('focusin', stop)
   container.addEventListener('focusout', start)
 
-  container.addEventListener(
-    'touchstart',
-    (e) => {
-      touchX = e.changedTouches[0].clientX
-      stop()
-    },
-    { passive: true }
-  )
-
-  container.addEventListener(
-    'touchend',
-    (e) => {
-      if (touchX === null) return
-      const delta = e.changedTouches[0].clientX - touchX
-      if (Math.abs(delta) > 48) go(current + (delta < 0 ? 1 : -1))
-      touchX = null
-    },
-    { passive: true }
-  )
+  onSwipe(container, (dir) => {
+    stop()
+    go(current + dir)
+  })
 
   go(0)
 }

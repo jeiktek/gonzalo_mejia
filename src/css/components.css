@@ -656,7 +656,6 @@
 
 .hero {
   position: relative;
-  isolation: isolate;
   height: 640px;
   min-height: 620px;
   overflow: hidden;
@@ -779,7 +778,9 @@
   position: absolute;
   top: auto;
   bottom: 20px;
-  z-index: 3;
+  /* Por encima de .stats-card (z-index 5): la tarjeta se solapa con los 64px
+     inferiores del hero y, sin esto, tapaba los controles. */
+  z-index: 6;
   transform: none;
   display: grid;
   place-items: center;
@@ -809,12 +810,16 @@
   left: 50%;
   bottom: 30px;
   transform: translateX(-50%);
-  z-index: 3;
+  /* Por encima de .stats-card (z-index 5), ver .hero-arrow. */
+  z-index: 6;
   display: flex;
-  gap: var(--space-2);
+  /* 34px = 44px de área táctil - 10px del punto, para que las áreas no se
+     solapen y un toque nunca salté a la diapositiva vecina. */
+  gap: 34px;
 }
 
 .hero-dot {
+  position: relative;
   width: 10px;
   height: 10px;
   border-radius: var(--radius-pill);
@@ -824,6 +829,18 @@
   transition:
     background-color var(--dur-fast) ease,
     width var(--dur-fast) ease;
+}
+
+/* Área táctil de 44x44 sin tocar el diseño: el pseudo-elemento es
+   transparente y absoluto, así que no altera el layout ni el punto visible. */
+.hero-dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
 }
 
 .hero-dot.is-active {
@@ -1589,6 +1606,9 @@
   color: var(--color-yellow);
 }
 
+/* 16px es el mínimo en iOS: por debajo, Safari hace zoom al enfocar el campo
+   y la página queda ampliada y descuadrada. No se usa un token de la escala
+   tipográfica a propósito, por eso el valor va literal. */
 .form-input {
   width: 100%;
   padding: 0 16px;
@@ -1597,7 +1617,7 @@
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: rgba(255, 255, 255, 0.08);
   color: var(--color-white);
-  font-size: var(--fs-small);
+  font-size: 16px;
   transition:
     border-color var(--dur-fast) ease,
     box-shadow var(--dur-fast) ease,
@@ -1719,7 +1739,9 @@ textarea.form-input {
   }
 }
 
-.footer-brand .brand {
+/* El selector era `.footer-brand .brand`, clase que no existe en el markup:
+   la marca del footer es `.brand--footer`. */
+.brand--footer {
   margin-bottom: var(--space-4);
 }
 

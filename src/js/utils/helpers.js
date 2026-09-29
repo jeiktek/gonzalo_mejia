@@ -19,10 +19,12 @@ export function currentPage() {
 /**
  * Ícono de Lucide renderizado como atributo (se convierte al montar).
  * La clase `icon` es la que usa el CSS para dar tamaño y grosor al trazo,
- * así que se incluye siempre en el placeholder.
+ * así que se incluye siempre en el placeholder. `extra` añade clases o
+ * atributos adicionales al mismo elemento `class`, nunca uno nuevo.
  */
 export function icon(name, extra = '') {
-  return `<i class="icon" data-lucide="${name}" aria-hidden="true"${extra}></i>`
+  const attrs = extra ? ` ${extra}` : ''
+  return `<i class="icon${attrs}" data-lucide="${name}" aria-hidden="true"></i>`
 }
 
 /**
@@ -41,4 +43,36 @@ export function prefersReducedMotion() {
     window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches
   )
+}
+
+/**
+ * Swipe horizontal por touch, compartido por el carrusel del hero y el
+ * lightbox. `onSwipe` recibe 1 si el dedo va hacia la izquierda (siguiente)
+ * y -1 si va hacia la derecha (anterior).
+ */
+export function onSwipe(el, onSwipe, { threshold = 48 } = {}) {
+  let startX = null
+
+  el.addEventListener(
+    'touchstart',
+    (e) => {
+      startX = e.changedTouches[0].clientX
+    },
+    { passive: true }
+  )
+
+  el.addEventListener(
+    'touchend',
+    (e) => {
+      if (startX === null) return
+      const delta = e.changedTouches[0].clientX - startX
+      startX = null
+      if (Math.abs(delta) > threshold) onSwipe(delta < 0 ? 1 : -1)
+    },
+    { passive: true }
+  )
+
+  return () => {
+    startX = null
+  }
 }

@@ -383,7 +383,7 @@ function renderGestiones() {
         <div class="grid grid-2">
           ${managementAreas.map((a, i) => `
             <a class="area-card" href="/${a.slug}.html"${reveal(i * 90)}>
-              ${icon(a.icon, ' class="area-icon icon-xl"')}
+              ${icon(a.icon, 'area-icon icon-xl')}
               <h2 class="area-title">${a.title}</h2>
               <p class="area-summary">${a.summary}</p>
               <span class="area-arrow link-animated">Leer más ${icon('arrow-right')}</span>
@@ -450,7 +450,7 @@ function renderManagement(key) {
               .map(
                 (p, i) => `
               <article class="principle-card"${reveal(i * 90)}>
-                <h3 class="principle-title">${icon(p.icon, ' class="icon"')} ${p.title}</h3>
+                <h3 class="principle-title">${icon(p.icon)} ${p.title}</h3>
                 <p class="principle-text">${p.text}</p>
               </article>`
               )

@@ -4,10 +4,11 @@
  */
 
 import { createIcons, icons } from 'lucide'
+import { icon } from './helpers.js'
 
 const KEY = 'gm-theme'
 
-export function resolveTheme() {
+function resolveTheme() {
   const saved = localStorage.getItem(KEY)
   if (saved === 'dark' || saved === 'light') return saved
   return window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -18,8 +19,6 @@ export function resolveTheme() {
 export function applyTheme() {
   document.documentElement.setAttribute('data-theme', resolveTheme())
 }
-
-const icon = (name) => `<i data-lucide="${name}" aria-hidden="true"></i>`
 
 export function initThemeToggle() {
   const btn = document.getElementById('theme-toggle')

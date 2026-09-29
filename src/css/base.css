@@ -54,10 +54,6 @@ strong {
   color: var(--color-text-secondary);
 }
 
-.text-muted {
-  color: var(--color-text-muted);
-}
-
 /* Enlace con subrayado animado (UI-UX.md: 17) */
 .link-animated {
   position: relative;
@@ -66,6 +62,19 @@ strong {
   gap: var(--space-2);
   font-weight: var(--fw-medium);
   color: var(--color-blue);
+}
+
+/* Área táctil de 44px de alto sin alterar la caja ni el subrayado: el
+   pseudo-elemento es absoluto y transparente, centrado sobre el texto. */
+.link-animated::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + var(--space-4));
+  height: 44px;
+  min-width: 44px;
 }
 
 .link-animated::after {

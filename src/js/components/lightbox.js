@@ -4,7 +4,7 @@
  * Navegación por flechas/teclado y swipe táctil.
  */
 
-import { icon } from '../utils/helpers.js'
+import { icon, onSwipe } from '../utils/helpers.js'
 
 export function initLightbox() {
   const items = [...document.querySelectorAll('[data-gallery-image]')]
@@ -97,24 +97,5 @@ export function initLightbox() {
     if (e.key === 'ArrowLeft') show(current - 1)
     if (e.key === 'ArrowRight') show(current + 1)
   })
-
-  let touchX = null
-  dialog.addEventListener(
-    'touchstart',
-    (e) => {
-      touchX = e.changedTouches[0].clientX
-    },
-    { passive: true }
-  )
-  dialog.addEventListener(
-    'touchend',
-    (e) => {
-      if (touchX === null) return
-      const delta = e.changedTouches[0].clientX - touchX
-      if (Math.abs(delta) > 48)
-        show(current + (delta < 0 ? 1 : -1))
-      touchX = null
-    },
-    { passive: true }
-  )
+  onSwipe(dialog, (dir) => show(current + dir))
 }

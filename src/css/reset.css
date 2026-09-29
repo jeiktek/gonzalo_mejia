@@ -19,6 +19,9 @@ html {
 
 body {
   min-height: 100vh;
+  /* 100dvh sigue a la barra de direcciones en móvil; 100vh deja hueco al
+     abrirla. El 100vh queda como fallback para navegadores antiguos. */
+  min-height: 100dvh;
   line-height: var(--lh-body);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

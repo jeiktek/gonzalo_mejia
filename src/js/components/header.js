@@ -86,12 +86,14 @@ function initHeaderInteractions(header) {
   const closeMenu = () => {
     header.classList.remove('nav-open')
     toggle?.setAttribute('aria-expanded', 'false')
+    document.body.style.overflow = ''
   }
 
   toggle?.addEventListener('click', () => {
     const open = header.classList.toggle('nav-open')
     toggle.setAttribute('aria-expanded', String(open))
     toggle.innerHTML = icon(open ? 'x' : 'menu')
+    document.body.style.overflow = open ? 'hidden' : ''
   })
 
   header.querySelectorAll('.nav-item.has-children > .nav-link').forEach((btn) => {

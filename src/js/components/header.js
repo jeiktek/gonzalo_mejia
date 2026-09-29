@@ -84,17 +84,25 @@ function initHeaderInteractions(header) {
   onScroll()
   window.addEventListener('scroll', onScroll, { passive: true })
 
+  const setToggleIcon = (isOpen) => {
+    if (!toggle) return
+    toggle.innerHTML = icon(isOpen ? 'x' : 'menu')
+    createIcons({ icons })
+  }
+
   const closeMenu = () => {
+    if (!header.classList.contains('nav-open')) return
     header.classList.remove('nav-open')
     toggle?.setAttribute('aria-expanded', 'false')
+    setToggleIcon(false)
     document.body.style.overflow = ''
   }
 
-  toggle?.addEventListener('click', () => {
+  toggle?.addEventListener('click', (e) => {
+    e.stopPropagation()
     const open = header.classList.toggle('nav-open')
     toggle.setAttribute('aria-expanded', String(open))
-    toggle.innerHTML = icon(open ? 'x' : 'menu')
-    createIcons({ icons })
+    setToggleIcon(open)
     document.body.style.overflow = open ? 'hidden' : ''
   })
 
@@ -115,6 +123,7 @@ function initHeaderInteractions(header) {
   })
 
   document.addEventListener('click', (e) => {
-    if (!header.contains(e.target)) closeMenu()
+    if (e.composedPath().includes(header)) return
+    closeMenu()
   })
 }

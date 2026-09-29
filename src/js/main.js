@@ -24,10 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
   bindContactForm()
 
   initThemeToggle()
-  createIcons({ icons })
 
   initCarousel()
   initStats()
   initLightbox()
+
+  // Al final: `initLightbox` inyecta sus botones en el DOM después de este
+  // punto, y `createIcons` solo convierte los placeholders que ya existen.
+  createIcons({ icons })
+
   initScrollReveal()
 })

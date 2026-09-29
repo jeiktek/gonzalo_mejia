@@ -4,10 +4,16 @@ export function formatNumber(value) {
   return new Intl.NumberFormat('es-CO').format(value)
 }
 
-/** Ruta actual normalizada: '/' se trata como '/index.html'. */
+/**
+ * Ruta actual normalizada a la forma `/pagina.html` con la que están escritos
+ * los `href` de `data.js`. El dev server sirve `/pagina.html`, pero Netlify y
+ * otros hosts sirven `/pagina` (URL limpia) o la raíz `/`, así que se
+ * normalizan las tres variantes para que el estado activo del menú no se pierda.
+ */
 export function currentPage() {
-  const path = window.location.pathname
-  return path === '/' ? '/index.html' : path
+  const path = window.location.pathname.replace(/\/+$/, '') || '/'
+  if (path === '/') return '/index.html'
+  return path.endsWith('.html') ? path : `${path}.html`
 }
 
 /**

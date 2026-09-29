@@ -8,20 +8,29 @@ import { brandIcon, currentPage, icon } from '../utils/helpers.js'
 import { createIcons, icons } from 'lucide'
 
 function navItem(item) {
-  const isCurrent = currentPage() === item.href
+  const page = currentPage()
+  const isCurrent = page === item.href
+
+  // Si la página actual es un hijo del submenú, la fila padre se marca activa
+  // para que siga resaltada, pero es el hijo quien declara `aria-current` para
+  // no duplicar la marca en el árbol de accesibilidad.
+  const hasActiveChild = (item.children || []).some((c) => page === c.href)
+
   const chip = item.icon
     ? `<span class="nav-link-icon" aria-hidden="true">${icon(item.icon)}</span>`
     : ''
 
+  const parentIsCurrent = isCurrent && !hasActiveChild
+
   const linkLabel = item.children
-    ? `<button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">${chip}<span class="nav-link-label">${item.label}</span><span class="nav-link-caret" aria-hidden="true">${icon('chevron-right')}</span></button>`
+    ? `<button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true"${parentIsCurrent ? ' aria-current="page"' : ''}>${chip}<span class="nav-link-label">${item.label}</span><span class="nav-link-caret" aria-hidden="true">${icon('chevron-right')}</span></button>`
     : `<a class="nav-link" href="${item.href}"${isCurrent ? ' aria-current="page"' : ''}>${chip}<span class="nav-link-label">${item.label}</span></a>`
 
   const children = item.children
     ? `<ul class="dropdown">${item.children
         .map(
           (c) =>
-            `<li><a class="dropdown-link${currentPage() === c.href ? ' is-active' : ''}" href="${c.href}">${c.icon ? `<span class="dropdown-link-icon" aria-hidden="true">${icon(c.icon)}</span>` : ''}<span class="dropdown-link-label">${c.label}</span></a></li>`
+            `<li><a class="dropdown-link${page === c.href ? ' is-active' : ''}" href="${c.href}"${page === c.href ? ' aria-current="page"' : ''}>${c.icon ? `<span class="dropdown-link-icon" aria-hidden="true">${icon(c.icon)}</span>` : ''}<span class="dropdown-link-label">${c.label}</span></a></li>`
         )
         .join('')}</ul>`
     : ''
@@ -29,7 +38,7 @@ function navItem(item) {
   const cls = [
     'nav-item',
     item.children ? 'has-children' : '',
-    isCurrent ? 'is-active' : '',
+    isCurrent || hasActiveChild ? 'is-active' : '',
   ]
     .filter(Boolean)
     .join(' ')

@@ -365,6 +365,11 @@
 }
 
 /* Menú móvil */
+.site-header.nav-open {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 .site-header.nav-open .nav {
   transform: translateX(0);
 }

@@ -750,7 +750,11 @@
 .hero-caption {
   position: absolute;
   inset-inline: 0;
-  bottom: 16%;
+  /* Valor absoluto, no porcentual: .stats-card pisa siempre los 64px inferiores
+     del hero (margin-top: -64px), así que el bloque de texto tiene que subir
+     una distancia fija para dejarle sitio a los controles del carrusel, que
+     van justo encima de la tarjeta. */
+  bottom: 136px;
   z-index: 2;
   padding-inline: clamp(16px, 6vw, 64px);
   max-width: var(--container-max);
@@ -794,9 +798,9 @@
 .hero-arrow {
   position: absolute;
   top: auto;
-  bottom: 20px;
-  /* Por encima de .stats-card (z-index 5): la tarjeta se solapa con los 64px
-     inferiores del hero y, sin esto, tapaba los controles. */
+  /* Encima de la banda de 64px que pisa .stats-card, para no quedar dibujados
+     encima de la tarjeta. 64 (solape) + 12 de aire = 76. */
+  bottom: 76px;
   z-index: 6;
   transform: none;
   display: grid;
@@ -825,9 +829,10 @@
 .hero-dots {
   position: absolute;
   left: 50%;
-  bottom: 30px;
+  /* Alineado por el centro con las flechas (76 + 22 del centro = 98; el punto
+     mide 5 de radio). */
+  bottom: 93px;
   transform: translateX(-50%);
-  /* Por encima de .stats-card (z-index 5), ver .hero-arrow. */
   z-index: 6;
   display: flex;
   /* 34px = 44px de área táctil - 10px del punto, para que las áreas no se

@@ -471,7 +471,7 @@ export const footer = {
     'Institución educativa moderna, tecnológica y cercana a su comunidad, comprometida con la formación de ciudadanos íntegros en Chigorodó, Urabá.',
   socials: [
     { icon: 'facebook', label: 'Facebook', href: site.social.facebook },
-    { icon: 'external-link', label: 'Plataforma académica', href: site.social.plataforma },
+    { icon: 'graduation-cap', label: 'Plataforma académica', href: site.social.plataforma },
   ],
   links: navigation,
 }

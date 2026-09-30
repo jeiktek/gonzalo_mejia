@@ -93,16 +93,23 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  border-radius: var(--radius-md);
-  color: var(--color-white);
+  /* Sin esto la barra de navegación los aplasta a 39px al faltar espacio. */
+  flex-shrink: 0;
+  border-radius: var(--radius-pill);
+  /* Mismo tratamiento que .social-btn: círculo amarillo con icono en azul, para
+     que tema y Facebook no se vean de distinto peso. */
+  background: var(--color-yellow);
+  color: var(--color-primary);
   transition:
     background-color var(--dur-fast) ease,
-    transform var(--dur-fast) var(--ease-out);
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) ease;
 }
 
 .icon-btn:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--color-yellow);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 /* Botones de redes sociales en el header (Facebook) */
@@ -112,6 +119,7 @@
   justify-content: center;
   width: 44px;
   height: 44px;
+  flex-shrink: 0;
   border-radius: var(--radius-pill);
   color: var(--color-primary);
   transition:
@@ -121,6 +129,13 @@
 }
 
 .social-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Iconos de 22px para que todos los botones circulares de la barra pesen igual:
+   el de tema salía a 1em (16px) frente a los 22px de Facebook. */
+.icon-btn .icon {
   width: 22px;
   height: 22px;
 }
@@ -289,6 +304,9 @@
   align-items: center;
   gap: var(--space-3);
   padding: 10px 12px;
+  /* Sin esto "Sobre Nosotros" se parte en dos líneas en escritorio y descuadra
+     la altura de la barra. */
+  white-space: nowrap;
   border-radius: var(--radius-md);
   font-size: var(--fs-small);
   font-weight: var(--fw-medium);
@@ -682,20 +700,19 @@
 
 .hero-slide {
   opacity: 0;
-  transition: opacity var(--dur-carousel) var(--ease-out);
+  /* Salida rápida: si el entrante apareciera a la vez, los dos títulos y
+     párrafos se superponen y quedan ilegibles. */
+  transition: opacity 200ms var(--ease-out);
   pointer-events: none;
 }
 
-/* Estado inicial sin depender de JS: la primera slide se ve aunque el script
-   no cargue o tarde en ejecutarse. */
-.hero-slide:first-child {
-  opacity: 1;
-  pointer-events: auto;
-}
-
+/* La primera slide ya nace con `is-active` en el HTML (sections.js), así que
+   no hace falta una regla :first-child: aquella dejaba el primer slide con
+   opacity 1 para siempre y al activar otro los dos se veían encimados. */
 .hero-slide.is-active {
   opacity: 1;
   pointer-events: auto;
+  transition: opacity 300ms var(--ease-out) 200ms;
 }
 
 .hero-img {
@@ -784,8 +801,8 @@
   transform: none;
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   font-size: 18px;
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.12);
@@ -1317,8 +1334,8 @@
   z-index: 2;
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.14);
   color: var(--color-white);
@@ -1339,8 +1356,8 @@
 .lightbox-nav button {
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.14);
   color: var(--color-white);
@@ -1759,8 +1776,8 @@ textarea.form-input {
 .footer-social a {
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.85);

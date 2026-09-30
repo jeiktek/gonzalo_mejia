@@ -21,7 +21,7 @@ export function initLightbox() {
   dialog.innerHTML = `
     <figure class="lightbox-figure">
       <button type="button" class="lightbox-close" aria-label="Cerrar">${icon('x')}</button>
-      <img class="lightbox-img" src="" alt="">
+      <img class="lightbox-img" alt="">
       <figcaption class="lightbox-cap">
         <span class="lightbox-caption"></span>
         <div class="lightbox-nav">
